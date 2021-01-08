@@ -192,7 +192,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: Score
 --- !u!222 &34000219
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278b0c6e19b73ec4fb597b8aeefd7750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartDelay: 2
+  restartDelay: 1
 --- !u!4 &1610797137
 Transform:
   m_ObjectHideFlags: 0
