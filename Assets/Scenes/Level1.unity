@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 2475da844866b4b448427c566fac830f,
+    type: 2}
   m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
@@ -187,7 +188,7 @@ MonoBehaviour:
     m_MaxSize: 111
     m_Alignment: 4
     m_AlignByGeometry: 0
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -1561,6 +1562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 278b0c6e19b73ec4fb597b8aeefd7750, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  restartDelay: 2
 --- !u!4 &1610797137
 Transform:
   m_ObjectHideFlags: 0
@@ -1822,7 +1824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1875848442}
-  forwardForce: 1000
+  forwardForce: 2000
   sideForce: 100
 --- !u!54 &1875848442
 Rigidbody:
