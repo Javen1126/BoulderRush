@@ -16,10 +16,11 @@ public class PlayerCollision : MonoBehaviour
         if(collisionInfo.collider.tag == "LoseCon")
         {
             Debug.Log("We hit an obstacle!");
-            //movement.enabled = false;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            transform.position = originalPos;
+            FindObjectOfType<GameManager>().GameOver();
+            movement.enabled = false;
+            //rb.velocity = Vector3.zero;
+            //rb.angularVelocity = Vector3.zero;
+            //transform.position = originalPos;
         }
     }
 }
