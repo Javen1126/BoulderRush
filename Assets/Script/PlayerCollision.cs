@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerCollision : MonoBehaviour
 {
     public Rigidbody rb;
     Vector3 originalPos;
     public PlayerMovement movement;
+    public Text scoreText;
     void Start()
     {
         originalPos = gameObject.transform.position;
@@ -21,6 +23,12 @@ public class PlayerCollision : MonoBehaviour
             //rb.velocity = Vector3.zero;
             //rb.angularVelocity = Vector3.zero;
             //transform.position = originalPos;
+        } else if (collisionInfo.collider.tag == "Breakable")
+        {
+            Debug.Log("We destroys somethhing!");
+            FindObjectOfType<ScoreUI>().destroyPoint();
+            Destroy(collisionInfo.gameObject);
         }
     }
+
 }
