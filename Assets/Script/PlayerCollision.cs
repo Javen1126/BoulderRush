@@ -23,11 +23,16 @@ public class PlayerCollision : MonoBehaviour
             //rb.velocity = Vector3.zero;
             //rb.angularVelocity = Vector3.zero;
             //transform.position = originalPos;
-        } else if (collisionInfo.collider.tag == "Breakable")
+        } 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Breakable")
         {
             Debug.Log("We destroys somethhing!");
             FindObjectOfType<ScoreUI>().destroyPoint();
-            Destroy(collisionInfo.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
