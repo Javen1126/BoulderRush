@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     bool gameEnded = false;
+    public GameObject gameoverPanel;
     public float restartDelay = 1f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -24,13 +25,20 @@ public class GameManager : MonoBehaviour
         if (gameEnded == false)
         { 
             gameEnded = true;
+            Time.timeScale = 0;
             Debug.Log("Game Over!");
-            Invoke("Restart", restartDelay);
+            gameoverPanel.SetActive(true);
+            //Invoke("Restart", restartDelay);
         }
     }
 
-    void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

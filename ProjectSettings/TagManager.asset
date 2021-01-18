@@ -6,6 +6,7 @@ TagManager:
   tags:
   - LoseCon
   - Breakable
+  - Invincible
   layers:
   - Default
   - TransparentFX
