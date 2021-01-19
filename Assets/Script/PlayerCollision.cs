@@ -18,6 +18,7 @@ public class PlayerCollision : MonoBehaviour
         if(collisionInfo.collider.tag == "LoseCon")
         {
             Debug.Log("We hit an obstacle!");
+            FindObjectOfType<AudioManager>().PlaySound("GameOver");
             FindObjectOfType<GameManager>().GameOver();
             movement.enabled = false;
             //rb.velocity = Vector3.zero;
@@ -31,6 +32,7 @@ public class PlayerCollision : MonoBehaviour
         if (other.tag == "Breakable")
         {
             Debug.Log("We destroys somethhing!");
+            FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
             FindObjectOfType<ScoreUI>().destroyPoint();
             Destroy(other.gameObject);
         }
