@@ -40,4 +40,16 @@ public class ScoreUI : MonoBehaviour
         }
         resetDest();
     }
+
+    public void destroyPoint(int i)
+    {
+        if (destroyObj == false)
+        {
+            destroyObj = true;
+            int score = int.Parse(scoreText.text) + 100*i;
+            scoreText.text = score.ToString();
+            Debug.Log("trying to add score");
+        }
+        resetDest();
+    }
 }
