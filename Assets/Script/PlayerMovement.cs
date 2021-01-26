@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.AddForce(0, 0, forwardForce * Time.deltaTime); //Add forward force to z axis
 
-        transform.Translate(Input.acceleration.x * Time.smoothDeltaTime * 10, 0, 0); // Accelerometer to tilt left and right
+        transform.Translate(Input.acceleration.x * Time.smoothDeltaTime * 20f, 0, 0); // Accelerometer to tilt left and right
 
         //Add force to x axis to control movement left and right (test movement using keyboard)
         if (Input.GetKey("right"))

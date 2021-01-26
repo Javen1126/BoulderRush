@@ -29,7 +29,7 @@ public class TileManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerTransform.position.z - 50 > zSpawn - (noofTiles * tileLength))
+        if(playerTransform.position.z - 60 > zSpawn - (noofTiles * tileLength))
         {
             SpawnTile(Random.Range(1, tilePrefabs.Length));
             DeleteTile();
