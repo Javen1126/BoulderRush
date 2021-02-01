@@ -5,12 +5,16 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
-    public float forwardForce = 200f;
-    public float sideForce = 500f;
+    public float forwardForce;
+    public float sideForce;
+    public float jumpForce;
+    public float jumpHeight;
+    private Vector3 jump;
+    public bool isGrounded;
     // Start is called before the first frame update
     void Start()
     {
-
+        jump = new Vector3(0f, jumpHeight, 0f);
     }
 
     // Update is called once per frame
@@ -37,9 +41,18 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
+        if (Input.GetKey("up") && isGrounded)
+        {
+            rb.AddForce(jump * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+
         if (rb.position.y < -1f)
         {
             FindObjectOfType<GameManager>().GameOver();
         }
+
+
     }
+
 }

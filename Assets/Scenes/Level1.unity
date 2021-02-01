@@ -459,7 +459,7 @@ PrefabInstance:
     - target: {fileID: 5835779536059056884, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
         type: 3}
       propertyPath: forwardForce
-      value: 1200
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 5835779536059056884, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
         type: 3}
@@ -475,6 +475,16 @@ PrefabInstance:
         type: 3}
       propertyPath: sideForce
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835779536059056884, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835779536059056884, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
+        type: 3}
+      propertyPath: jumpForce
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5835779536059056885, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
         type: 3}
@@ -560,6 +570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sizeMultiplier
       value: 1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5835779536059056887, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5835779536059056888, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
         type: 3}
