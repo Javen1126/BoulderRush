@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        if (Input.GetKey("up") && isGrounded)
+        if ((Input.GetKey("up") && isGrounded) || (Input.GetMouseButton(0) && isGrounded))
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
@@ -51,8 +51,7 @@ public class PlayerMovement : MonoBehaviour
         {
             FindObjectOfType<GameManager>().GameOver();
         }
-
-
+            
     }
 
 }
