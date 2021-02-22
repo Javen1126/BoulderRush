@@ -19,6 +19,7 @@ public class PlayerCollision : MonoBehaviour
     public int scoreMultiplier;
     public int addupPoint = 0;
     public int requiredPoint;
+    public GameObject floatingTextPrefab;
     void Start()
     {
         originalPos = gameObject.transform.position;
@@ -40,6 +41,10 @@ public class PlayerCollision : MonoBehaviour
                 Debug.Log("We destroys something!");
                 FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
                 FindObjectOfType<ScoreUI>().destroyPoint(scoreMultiplier);
+                if (floatingTextPrefab)
+                {
+                    showFloatingText(collisionInfo);
+                }
                 Destroy(collisionInfo.gameObject);
             }
         }
@@ -56,7 +61,10 @@ public class PlayerCollision : MonoBehaviour
             Debug.Log("We destroys something!");
             FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
             FindObjectOfType<ScoreUI>().destroyPoint(scoreMultiplier);
-            //Destroy(collisionInfo.gameObject);
+            if (floatingTextPrefab)
+            {
+                showFloatingText(collisionInfo);
+            }
             Destroy(collisionInfo.gameObject, destroyTime);
             if (Invincible == false)
             {
@@ -148,5 +156,11 @@ public class PlayerCollision : MonoBehaviour
         SMultiply = true;
         yield return new WaitForSeconds(duration);
         SMultiply = false;
+    }
+    public void showFloatingText(Collision other)
+    {
+        var go = Instantiate(floatingTextPrefab, other.transform.position, Quaternion.identity, other.transform);
+        int parseScore = 100 * scoreMultiplier;
+        go.GetComponent<TextMesh>().text = parseScore.ToString();
     }
 }

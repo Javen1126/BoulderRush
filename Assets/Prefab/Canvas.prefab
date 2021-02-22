@@ -70,7 +70,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -180,6 +180,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   scoreText: {fileID: 5349746431571236414}
+  floatingText: {fileID: 2909318361656350013, guid: 54bde4a658b14b64abec8c384b8d0ec0,
+    type: 3}
 --- !u!1 &6833670807383068699
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,10 +217,10 @@ RectTransform:
   m_Father: {fileID: 6595930658955507431}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 456, y: 600}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8193023777203821604
 CanvasRenderer:
