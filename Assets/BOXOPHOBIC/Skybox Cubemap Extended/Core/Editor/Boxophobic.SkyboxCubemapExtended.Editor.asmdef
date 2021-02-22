@@ -4,8 +4,8 @@
         "GUID:10f1dd4cfd6afb54da274d7d818bd8f6",
         "GUID:825ad574da7360d4e8aea558f272972e"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [
-        "Android",
         "Editor"
     ],
     "excludePlatforms": [],
@@ -14,6 +14,5 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "versionDefines": []
 }
