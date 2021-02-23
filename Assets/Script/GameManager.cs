@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public GameObject muteButton;
     public GameObject unmuteButton;
     public float restartDelay = 1f;
+
     // Start is called before the first frame update
     void Start()
     {

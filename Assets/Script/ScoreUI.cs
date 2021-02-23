@@ -7,18 +7,19 @@ public class ScoreUI : MonoBehaviour
 {
     // Start is called before the first frame update
     bool destroyObj = false;
-    public Transform player;
     public Text scoreText;
+    public Text highscoreText;
 
     void Start()
     {
         scoreText.text = "0";
+        highscoreText.text = "High Score : " + FindObjectOfType<ScoreManager>().highscore.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //scoreText.text = player.position.z.ToString("0");
+        
     }
 
     public void resetDest()
@@ -48,6 +49,9 @@ public class ScoreUI : MonoBehaviour
             destroyObj = true;
             int score = int.Parse(scoreText.text) + 100*i;
             scoreText.text = score.ToString();
+            ScoreManager.instance.UpdateScore(scoreText.text);
+            ScoreManager.instance.UpdateHighScore();
+            highscoreText.text = "High Score : " + FindObjectOfType<ScoreManager>().highscore.ToString();
             Debug.Log("trying to add score");
         }
         resetDest();
