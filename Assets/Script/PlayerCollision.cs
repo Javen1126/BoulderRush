@@ -45,7 +45,7 @@ public class PlayerCollision : MonoBehaviour
                 {
                     showFloatingText(collisionInfo);
                 }
-                Destroy(collisionInfo.gameObject);
+                Destroy(collisionInfo.gameObject, destroyTime);
             }
         }
 
