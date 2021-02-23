@@ -476,11 +476,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefabs:
   - {fileID: 6922236125636714042, guid: f353a44358b75b247a44b4d8f3e99347, type: 3}
-  - {fileID: 322998270097973332, guid: 284f0dddc6b5a8945943f7275311ad91, type: 3}
-  - {fileID: 2105444922372938847, guid: 333ea08cec07d164a8486963fd431b27, type: 3}
-  - {fileID: 599751602008288576, guid: 6eba356c707e64a459924ec60a5646be, type: 3}
-  - {fileID: 5454372988970084094, guid: 9e7590239924c4840848c42df8d665b4, type: 3}
-  - {fileID: 7294012623294912575, guid: a0146e2b9596e094088b598e922509bf, type: 3}
+  - {fileID: 3790961755197034841, guid: 4c04dd5e6b33cc342bc9161a8c9d1c9b, type: 3}
+  - {fileID: 5380976095751423007, guid: 70cb6fcb1df323d42a80a8c1335e53ea, type: 3}
+  - {fileID: 4832527211678345752, guid: a81aafcfc400b9c4fa3bf1f4776c933a, type: 3}
+  - {fileID: 8968783365011607183, guid: 2cef39df8d7e638448db10fa3a86a3bb, type: 3}
   zSpawn: 0
   tileLength: 100
   noofTiles: 3
@@ -505,18 +504,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1909423058}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1452026263 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e,
-    type: 3}
-  m_PrefabInstance: {fileID: 7347392068244387857}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1492917119 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7311913367993009943, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
@@ -833,11 +820,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 196759126883300314, guid: 5c524ebb0962c6544b88538fea7b2636,
-        type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 196759126883300315, guid: 5c524ebb0962c6544b88538fea7b2636,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1014,6 +996,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7311913366729633098, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311913366729633098, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311913366729633098, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311913366729633098, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311913366729633098, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7311913366729633099, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1149,6 +1156,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7311913368437037289, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7311913368437037290, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.00012207031
+      objectReference: {fileID: 0}
     - target: {fileID: 7311913368464945533, guid: 1187f67a732be2e4ca8aab1ae5e7529a,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1168,28 +1185,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
-      propertyPath: m_FontData.m_HorizontalOverflow
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
-      propertyPath: m_FontData.m_MinSize
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
-      propertyPath: m_FontData.m_Font
+    - target: {fileID: 309226017, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 12800000, guid: be3a93a987c5c9446be0a52f57702cf8,
-        type: 3}
-    - target: {fileID: 2118603122225416456, guid: cf3831cad4eb8a94486ac28f8ce5368e,
-        type: 3}
-      propertyPath: highscoreText
+      objectReference: {fileID: 2108923877}
+    - target: {fileID: 309226017, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1452026263}
+      objectReference: {fileID: 2058238626}
     - target: {fileID: 6595930658955507431, guid: cf3831cad4eb8a94486ac28f8ce5368e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1299,6 +1302,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7346253159781836296, guid: cf3831cad4eb8a94486ac28f8ce5368e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7347392066622736043, guid: cf3831cad4eb8a94486ac28f8ce5368e,
         type: 3}

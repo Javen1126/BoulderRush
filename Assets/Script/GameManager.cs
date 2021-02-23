@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
         if (gameEnded == false)
         { 
             gameEnded = true;
+            pauseButton.SetActive(false);
             Time.timeScale = 0;
             Debug.Log("Game Over!");
             gameoverPanel.SetActive(true);

@@ -4,8 +4,22 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+
+    public static AudioManager instance;
     public Sound[] sounds;
-    // Start is called before the first frame update
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
+        // Start is called before the first frame update
     void Start()
     {
         foreach(Sound s in sounds)
@@ -14,6 +28,8 @@ public class AudioManager : MonoBehaviour
             s.source.clip = s.clip;
             s.source.loop = s.loop;
         }
+
+        PlaySound("BGM");
     }
 
     // Update is called once per frame

@@ -46,16 +46,21 @@ MonoBehaviour:
   sounds:
   - name: DestroyObj1
     clip: {fileID: 8300000, guid: ac2f87e9845c0da4ea7c1314f52ba22b, type: 3}
-    volume: 0.5
+    volume: 1
     loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: b543c38e106250641801dc1abe5bf1bc, type: 3}
-    volume: 0.5
+    volume: 1
     loop: 0
     source: {fileID: 0}
   - name: ButtonSound
     clip: {fileID: 8300000, guid: 26714a96c3ce9ae41af9ac47a2361c09, type: 3}
-    volume: 0.3
+    volume: 1
     loop: 0
+    source: {fileID: 0}
+  - name: BGM
+    clip: {fileID: 8300000, guid: 6a50202cdfd73574b8e0449687030ce3, type: 3}
+    volume: 1
+    loop: 1
     source: {fileID: 0}
