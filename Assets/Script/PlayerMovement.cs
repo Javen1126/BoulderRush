@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -41,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(-sideForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
-        if ((Input.GetKey("up") && isGrounded) || (Input.GetMouseButton(0) && isGrounded))
+        if ((Input.GetKey("up") && isGrounded) || (Input.GetMouseButton(0) && isGrounded) && (!EventSystem.current.IsPointerOverGameObject() || !EventSystem.current.IsPointerOverGameObject(Input.GetTouch(0).fingerId)))
         {
             rb.AddForce(jump * jumpForce, ForceMode.Impulse);
             isGrounded = false;
@@ -49,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.position.y < -1f)
         {
+            FindObjectOfType<AudioManager>().PlaySound("GameOver");
             FindObjectOfType<GameManager>().GameOver();
         }
             
