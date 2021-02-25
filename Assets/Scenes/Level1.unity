@@ -669,6 +669,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2909318361656350013, guid: 54bde4a658b14b64abec8c384b8d0ec0,
         type: 3}
+    - target: {fileID: 5835779536059056886, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
+        type: 3}
+      propertyPath: Explosion
+      value: 
+      objectReference: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
     - target: {fileID: 5835779536059056887, guid: bb7c07aaf71292c44a7a8fd3e8b355fc,
         type: 3}
       propertyPath: m_Constraints
@@ -1193,6 +1198,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 2058238626}
+    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7201498
+      objectReference: {fileID: 0}
+    - target: {fileID: 1452026263, guid: cf3831cad4eb8a94486ac28f8ce5368e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2688679
+      objectReference: {fileID: 0}
     - target: {fileID: 6595930658955507431, guid: cf3831cad4eb8a94486ac28f8ce5368e,
         type: 3}
       propertyPath: m_LocalPosition.x

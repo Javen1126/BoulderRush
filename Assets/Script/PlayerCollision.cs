@@ -20,6 +20,7 @@ public class PlayerCollision : MonoBehaviour
     public int addupPoint = 0;
     public int requiredPoint;
     public GameObject floatingTextPrefab;
+    public GameObject Explosion;
     void Start()
     {
         originalPos = gameObject.transform.position;
@@ -33,7 +34,8 @@ public class PlayerCollision : MonoBehaviour
             {
                 Debug.Log("We hit an obstacle!");
                 FindObjectOfType<AudioManager>().PlaySound("GameOver");
-                FindObjectOfType<GameManager>().GameOver();
+                StartCoroutine(Lose());
+                Explode(collisionInfo);
                 movement.enabled = false;
             }
             else
@@ -107,41 +109,6 @@ public class PlayerCollision : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.tag == "Breakable")
-        //{
-        //    if (SMultiply == false)
-        //    {
-        //        Debug.Log("We destroys something!");
-        //        FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
-        //        FindObjectOfType<ScoreUI>().destroyPoint();
-        //        Destroy(other.gameObject);
-        //    }
-        //    else
-        //    {
-        //        Debug.Log("We destroys something with Score Multiplier!");
-        //        FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
-        //        FindObjectOfType<ScoreUI>().destroyPoint(2);
-        //        Destroy(other.gameObject);
-        //    }
-        //}
-
-        if (other.tag == "Invincible")
-        {
-            Debug.Log("We got Invincible Power Up!");
-            StartCoroutine(InvinciblePow(rb));
-            Destroy(other.gameObject);
-        }
-
-        if (other.tag == "ScoreMultiplier")
-        {
-            Debug.Log("We got ScoreMultiplier Power Up!");
-            StartCoroutine(SMultiplierPow(rb));
-            Destroy(other.gameObject);
-        }
-    }
-
     IEnumerator InvinciblePow(Rigidbody player)
     {
         player.transform.localScale *= sizeMultiplier;
@@ -162,5 +129,17 @@ public class PlayerCollision : MonoBehaviour
         var go = Instantiate(floatingTextPrefab, other.transform.position, Quaternion.identity, other.transform);
         int parseScore = 100 * scoreMultiplier;
         go.GetComponent<TextMesh>().text = parseScore.ToString();
+    }
+
+    void Explode(Collision i)
+    {
+        GameObject explosive = Instantiate(Explosion, i.transform.position, Quaternion.identity);
+        explosive.GetComponent<ParticleSystem>().Play();
+    }
+
+    IEnumerator Lose()
+    {
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<GameManager>().GameOver();
     }
 }
