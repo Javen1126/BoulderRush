@@ -35,8 +35,16 @@ public class PlayerCollision : MonoBehaviour
                 Debug.Log("We hit an obstacle!");
                 FindObjectOfType<AudioManager>().PlaySound("GameOver");
                 StartCoroutine(Lose());
-                Explode(collisionInfo);
                 movement.enabled = false;
+                // Calculate Angle Between the collision point and the player
+                Vector3 dir = collisionInfo.contacts[0].point - transform.position;
+                // We then get the opposite (-Vector3) and normalize it
+                dir = -dir.normalized;
+                // And finally we add force in the direction of dir and multiply it by force. 
+                // This will push back the player
+                rb.AddForce(dir * 500);
+                Explode(collisionInfo);
+                Destroy(collisionInfo.gameObject);
             }
             else
             {
@@ -47,18 +55,15 @@ public class PlayerCollision : MonoBehaviour
                 {
                     showFloatingText(collisionInfo);
                 }
+                Explode(collisionInfo);
                 Destroy(collisionInfo.gameObject, destroyTime);
             }
         }
 
         if(collisionInfo.collider.tag == "Breakable")
         {
-            // Calculate Angle Between the collision point and the player
             Vector3 dir = collisionInfo.contacts[0].point - rb.transform.position;
-            // We then get the opposite (-Vector3) and normalize it
             dir = dir.normalized;
-            // And finally we add force in the direction of dir and multiply it by force. 
-            // This will push back the player
             collisionInfo.rigidbody.AddForce(dir * 20);
             Debug.Log("We destroys something!");
             FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
