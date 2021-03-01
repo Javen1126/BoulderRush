@@ -11,12 +11,6 @@ public class MainMenu : MonoBehaviour
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void gameStart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -26,5 +20,10 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
         //UnityEditor.EditorApplication.isPlaying = false;
+    }
+
+    public void gameTutorial()
+    {
+        FindObjectOfType<TutorialController>().tutorial.SetActive(true);
     }
 }

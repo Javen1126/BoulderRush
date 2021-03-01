@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5835779536059056887}
   - component: {fileID: 5835779536059056884}
   - component: {fileID: 5835779536059056886}
+  - component: {fileID: 351905079}
+  - component: {fileID: 351905086}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -155,3 +157,33 @@ MonoBehaviour:
   scoreMultiplier: 1
   addupPoint: 0
   requiredPoint: 1000
+  floatingTextPrefab: {fileID: 2909318361656350013, guid: 54bde4a658b14b64abec8c384b8d0ec0,
+    type: 3}
+  Explosion: {fileID: 191186, guid: 079954accd64b32419ec069129c81273, type: 3}
+--- !u!64 &351905079
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835779536059056889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_Mesh: {fileID: 4711208715938537054, guid: 0aed6866fd4905d48a0cacd62abbf5a3, type: 3}
+--- !u!65 &351905086
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5835779536059056889}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0100431, y: 1.0927973, z: 1.2069253}
+  m_Center: {x: 0.022145987, y: -0.023936749, z: 0.049272954}
