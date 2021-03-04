@@ -10,7 +10,6 @@ public class PlayerCollision : MonoBehaviour
     public PlayerMovement movement;
     public Text scoreText;
     public bool Invincible = false;
-    public bool SMultiply = false;
     public float duration;
     public float sizeMultiplier;
     public float destroyTime;
@@ -32,7 +31,6 @@ public class PlayerCollision : MonoBehaviour
         {
             if (Invincible == false)
             {
-                Debug.Log("We hit an obstacle!");
                 FindObjectOfType<AudioManager>().PlaySound("GameOver");
                 StartCoroutine(Lose());
                 movement.enabled = false;
@@ -48,7 +46,6 @@ public class PlayerCollision : MonoBehaviour
             }
             else
             {
-                Debug.Log("We destroys something!");
                 FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
                 FindObjectOfType<ScoreUI>().destroyPoint(scoreMultiplier);
                 if (floatingTextPrefab)
@@ -65,7 +62,6 @@ public class PlayerCollision : MonoBehaviour
             Vector3 dir = collisionInfo.contacts[0].point - rb.transform.position;
             dir = dir.normalized;
             collisionInfo.rigidbody.AddForce(dir * 20);
-            Debug.Log("We destroys something!");
             FindObjectOfType<AudioManager>().PlaySound("DestroyObj1");
             FindObjectOfType<ScoreUI>().destroyPoint(scoreMultiplier);
             if (floatingTextPrefab)
@@ -77,9 +73,6 @@ public class PlayerCollision : MonoBehaviour
             {
                 addupPoint += (100 * scoreMultiplier);
             }
-            Debug.Log(scoreMultiplier);
-            Debug.Log(addupPoint);
-            Debug.Log(requiredPoint);
             if (addupPoint >= requiredPoint)
             {
                 if (scoreMultiplier >= maxscoreMultiplier)
@@ -123,12 +116,6 @@ public class PlayerCollision : MonoBehaviour
         player.transform.localScale /= sizeMultiplier;
     }
 
-    IEnumerator SMultiplierPow(Rigidbody player)
-    {
-        SMultiply = true;
-        yield return new WaitForSeconds(duration);
-        SMultiply = false;
-    }
     public void showFloatingText(Collision other)
     {
         var go = Instantiate(floatingTextPrefab, other.transform.position, Quaternion.identity, other.transform);

@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        Screen.sleepTimeout = SleepTimeout.NeverSleep;
     }
 
     // Update is called once per frame
@@ -34,7 +35,6 @@ public class GameManager : MonoBehaviour
             gameEnded = true;
             pauseButton.SetActive(false);
             Time.timeScale = 0;
-            Debug.Log("Game Over!");
             gameoverPanel.SetActive(true);
             //Invoke("Restart", restartDelay);
         }
@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
             gamePaused = true;
             pauseButton.SetActive(false);
             Time.timeScale = 0;
-            Debug.Log("Game Paused");
             pausePanel.SetActive(true);
         }
     }
@@ -69,7 +68,6 @@ public class GameManager : MonoBehaviour
             gamePaused = false;
             pausePanel.SetActive(false);
             Time.timeScale = 1;
-            Debug.Log("Game Resumed");
             pauseButton.SetActive(true);
         }
     }

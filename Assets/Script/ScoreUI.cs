@@ -37,7 +37,6 @@ public class ScoreUI : MonoBehaviour
             destroyObj = true;
             int score = int.Parse(scoreText.text) + 100;
             scoreText.text = score.ToString();
-            Debug.Log("trying to add score");
         }
         resetDest();
     }
@@ -52,7 +51,6 @@ public class ScoreUI : MonoBehaviour
             ScoreManager.instance.UpdateScore(scoreText.text);
             ScoreManager.instance.UpdateHighScore();
             highscoreText.text = "High Score : " + FindObjectOfType<ScoreManager>().highscore.ToString();
-            Debug.Log("trying to add score");
         }
         resetDest();
     }
